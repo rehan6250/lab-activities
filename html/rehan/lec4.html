@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Tables, Div, Span & Layout Design</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: lightgray;
+      border-bottom: 3px solid green;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: green;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: darkgrey;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: darkgray;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: green;
+      font-size: 2rem;
+      border-bottom: 2px solid green;
+      padding-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid green;
+    }
+
+    th {
+      background: green;
+      color: black;
+    }
+
+    td {
+      background: gray;
+    }
+
+    .box {
+      background: green;
+      color: black;
+      padding: 15px;
+      margin: 10px 0;
+      border-radius: 5px;
+    }
+
+    .highlight {
+      color: orange;
+      font-weight: bold;
+    }
+
+    .layout {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .column {
+      background: gray;
+      padding: 20px;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: dimgray;
+      border-top: 3px solid green;
+      margin-top: 50px;
+    }
+
+    footer p {
+      color: lightgray;
+    }
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>HTML Tables, Div, Span & Layout Design</h1>
+    <p>Understanding Key HTML Elements for Structure and Design</p>
+  </header>
+
+  <section>
+    <h2>1. HTML Tables</h2>
+    <p>Tables organize data into rows and columns:</p>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Course</th>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td>Alice</td>
+        <td>Web Development</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Bob</td>
+        <td>Database Systems</td>
+      </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>2. HTML Div</h2>
+    <p>The <code>&lt;div&gt;</code> element is a block-level container used for layout and styling:</p>
+    <div class="box">This is a styled div container.</div>
+  </section>
+
+  <section>
+    <h2>3. HTML Span</h2>
+    <p>The <code>&lt;span&gt;</code> element is an inline container for applying styles to parts of text:</p>
+    <p>This is an example of a <span class="highlight">highlighted word</span> using the span element.</p>
+  </section>
+
+  <section>
+    <h2>4. Layout Design</h2>
+    <p>Using HTML and CSS, we can create flexible layouts:</p>
+    <div class="layout">
+      <div class="column">Column 1: Introduction to HTML</div>
+      <div class="column">Column 2: HTML Tables & Divs</div>
+      <div class="column">Column 3: Layout Design Techniques</div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Web Development Batch 19 - Fall Semester</p>
+  </footer>
+</body>
+</html>

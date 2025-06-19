@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HTML Forms</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      margin: 0;
+      padding: 0;
+      background: black;
+      color: white;
+    }
+
+    header {
+      text-align: center;
+      padding: 40px 20px;
+      background: lightgray;
+      border-bottom: 3px solid green;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      color: green;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: dimgray;
+    }
+
+    section {
+      max-width: 800px;
+      margin: 40px auto;
+      padding: 20px;
+      background: darkgray;
+      border-radius: 10px;
+    }
+
+    h2 {
+      color: green;
+      font-size: 2rem;
+      border-bottom: 2px solid green;
+      padding-bottom: 5px;
+    }
+
+    p {
+      margin-bottom: 15px;
+    }
+
+    form {
+      background: gray;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 5px;
+      font-weight: bold;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    textarea,
+    select {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      background: black;
+      color: white;
+      border: 1px solid green;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+
+    input[type="radio"],
+    input[type="checkbox"] {
+      margin-right: 5px;
+    }
+
+    button {
+      background: green;
+      color: black;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: darkgreen;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: dimgray;
+      border-top: 3px solid green;
+      margin-top: 50px;
+    }
+
+    footer p {
+      color: lightgray;
+    }
+</style>
+
+</head>
+<body>
+  <header>
+    <h1>HTML Forms</h1>
+    <p>Collecting User Data with HTML5 Forms</p>
+  </header>
+
+  <section>
+    <h2>1. What are HTML Forms?</h2>
+    <p>Forms in HTML are used to collect user input and send it to a server for processing. They consist of input fields, buttons, and other interactive elements.</p>
+  </section>
+
+  <section>
+    <h2>2. HTML Form Elements</h2>
+    <form action="#" method="post">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password" placeholder="Create a password" required>
+
+      <label>Gender:</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male" style="display: inline;">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female" style="display: inline;">Female</label>
+
+      <label for="country">Select Country:</label>
+      <select id="country" name="country">
+        <option value="usa">USA</option>
+        <option value="uk">UK</option>
+        <option value="pakistan">Pakistan</option>
+        <option value="canada">Canada</option>
+      </select>
+
+      <label for="message">Your Message:</label>
+      <textarea id="message" name="message" rows="5" placeholder="Write your message here..."></textarea>
+
+      <label>
+        <input type="checkbox" name="subscribe" value="yes"> Subscribe to Newsletter
+      </label>
+
+      <button type="submit">Submit Form</button>
+    </form>
+  </section>
+
+  <section>
+    <h2>3. Common Form Attributes</h2>
+    <ul>
+      <li><strong>action:</strong> Specifies the URL where form data is sent.</li>
+      <li><strong>method:</strong> Defines the HTTP method (GET or POST).</li>
+      <li><strong>required:</strong> Ensures the field must be filled before submission.</li>
+      <li><strong>placeholder:</strong> Provides a hint inside input fields.</li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Web Development Batch 19 - Fall Semester</p>
+  </footer>
+</body>
+</html>

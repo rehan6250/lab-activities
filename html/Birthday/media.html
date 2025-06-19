@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Media 🎧</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf5;
+      color: #333;
+    }
+
+    nav {
+      background-color: #ffe4e1;
+      padding: 1.5em;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 3em 2em;
+      text-align: center;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #e91e63;
+      margin-bottom: 1.5em;
+    }
+
+    .media-item {
+      margin: 20px auto;
+      max-width: 90%;
+    }
+
+    video, audio {
+      width: 100%;
+      max-width: 600px;
+      border-radius: 12px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+
+    .media-title {
+      margin-bottom: 0.5em;
+      font-size: 1.2rem;
+      color: #444;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="message.html">Message</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="media.html">Media</a>
+  </nav>
+
+  <main>
+    <h2>🎥 Videos & Voice Messages</h2>
+
+    <div class="media-item">
+      <div class="media-title">Dance Performance 💃</div>
+      <video controls>
+        <source src="Aina Nere Na Ho Dildar We , Hani Sheikh Latest Dance Performance on Mujra Song 2023.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="media-item">
+      <div class="media-title">Funny Birthday Clip 🎂</div>
+      <video controls>
+        <source src="birthday_funny_clip.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="media-item">
+      <div class="media-title">Special Message for You 🥰</div>
+      <video controls>
+        <source src="special_message.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+    </div>
+
+    <div class="media-item">
+      <div class="media-title">Voice Message 🎤</div>
+      <audio controls>
+        <source src="voice_message.mp3" type="audio/mpeg" />
+        Your browser does not support the audio element.
+      </audio>
+    </div>
+  </main>
+</body>
+</html>

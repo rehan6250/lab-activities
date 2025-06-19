@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday 🎉</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf5;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background-color: #ffe4e1;
+      padding: 1.5em;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    main {
+      text-align: center;
+      padding: 4em 2em;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: #e91e63;
+    }
+
+    p {
+      font-size: 1.5rem;
+    }
+
+    /* Confetti animation */
+    .confetti {
+      position: fixed;
+      top: -10px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+      overflow: hidden;
+    }
+
+    .confetti span {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff4081;
+      animation: confetti-fall 3s infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes confetti-fall {
+      0% {
+        transform: translateY(0) rotate(0);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(720deg);
+        opacity: 0;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="message.html">Message</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="media.html">Media</a>
+  </nav>
+
+  <main>
+    <h1>🎉 Happy Birthday!</h1>
+    <p>Welcome to your special birthday website. Let’s celebrate together!</p>
+  </main>
+
+  <div class="confetti" id="confetti"></div>
+
+  <script>
+    // Generate falling confetti squares
+    const confettiContainer = document.getElementById('confetti');
+
+    for (let i = 0; i < 50; i++) {
+      const confetti = document.createElement('span');
+      confetti.style.left = Math.random() * 100 + 'vw';
+      confetti.style.animationDelay = Math.random() * 2 + 's';
+      confetti.style.backgroundColor = ['#ff4081', '#f50057', '#e91e63'][Math.floor(Math.random() * 3)];
+      confettiContainer.appendChild(confetti);
+    }
+  </script>
+</body>
+</html>

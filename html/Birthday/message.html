@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Birthday Message 💌</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf5;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background-color: #ffe4e1;
+      padding: 1.5em;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 4em 2em;
+      max-width: 800px;
+      margin: 0 auto;
+      animation: fadeIn 1.5s ease-in-out;
+      position: relative;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #e91e63;
+      text-align: center;
+      margin-bottom: 2rem;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 3px solid #e91e63;
+      width: 0;
+      animation: typewriter 3s steps(30) 0.5s forwards, blink 0.5s step-end infinite alternate;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 1.8;
+      margin-bottom: 2.5rem;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeUp 1s forwards;
+    }
+
+    p:nth-of-type(2) {
+      animation-delay: 1s;
+    }
+
+    p:nth-of-type(3) {
+      animation-delay: 2s;
+    }
+
+    /* Keyframes */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes typewriter {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent; }
+    }
+
+    /* Floating hearts */
+    .hearts {
+      position: fixed;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 999;
+    }
+
+    .hearts span {
+      position: absolute;
+      font-size: 24px;
+      animation: floatUp 5s linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      0% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) scale(1.5);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="message.html">Message</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="media.html">Media</a>
+  </nav>
+
+  <main>
+    <h2>💖 A Letter for You</h2>
+
+    <p>
+      Dear [Friend’s Name],<br /><br />
+      I just wanted to say how amazing you are. I'm so lucky to know you and share these memories with you.
+      Here's to more laughter, joy, and beautiful moments! 🎂🎈
+    </p>
+
+    <p>
+      You light up every room you walk into. Your smile, your heart, and your kindness are truly one of a kind.
+      I hope today brings you just as much happiness as you bring to everyone around you. 🌟🎉
+    </p>
+
+    <p>
+      Keep being the wonderful person you are. Never stop dreaming, exploring, and growing.
+      This birthday is just the beginning of another amazing chapter of your life. 🥳✨
+    </p>
+  </main>
+
+  <div class="hearts" id="hearts"></div>
+
+  <script>
+    // Floating hearts animation
+    const heartsContainer = document.getElementById("hearts");
+    const emojis = ["❤️", "💖", "💘", "💗"];
+
+    for (let i = 0; i < 20; i++) {
+      const heart = document.createElement("span");
+      heart.innerText = emojis[Math.floor(Math.random() * emojis.length)];
+      heart.style.left = Math.random() * 100 + "vw";
+      heart.style.animationDelay = Math.random() * 5 + "s";
+      heartsContainer.appendChild(heart);
+    }
+  </script>
+</body>
+</html>

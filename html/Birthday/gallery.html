@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gallery 📸</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #fffaf5;
+      color: #333;
+      overflow-x: hidden;
+    }
+
+    nav {
+      background-color: #ffe4e1;
+      padding: 1.5em;
+      text-align: center;
+      font-size: 1.2em;
+    }
+
+    nav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #333;
+      font-weight: bold;
+    }
+
+    main {
+      padding: 3em 2em;
+      text-align: center;
+      animation: fadeIn 1.2s ease-in-out;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      color: #e91e63;
+      margin-bottom: 0.5em;
+    }
+
+    .instruction {
+      font-size: 1.2rem;
+      color: #888;
+      margin-bottom: 2em;
+    }
+
+    .slider {
+      position: relative;
+      width: 90%;
+      max-width: 800px;
+      height: 450px;
+      margin: 0 auto;
+      overflow: hidden;
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      background-color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .slide {
+      position: absolute;
+      max-width: 100%;
+      max-height: 100%;
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: none;
+      transition: opacity 1s ease-in-out;
+    }
+
+    .slide.active {
+      display: block;
+      opacity: 1;
+      animation: fadeIn 1s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    /* Confetti animation */
+    .confetti {
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      background-color: #ff4081;
+      animation: fall 4s linear infinite;
+      opacity: 0.7;
+      z-index: 999;
+    }
+
+    @keyframes fall {
+      0% {
+        transform: translateY(-100vh) rotate(0deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(100vh) rotate(360deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="message.html">Message</a>
+    <a href="gallery.html">Gallery</a>
+    <a href="media.html">Media</a>
+  </nav>
+
+  <main>
+    <h2>📸 Our Memories</h2>
+    <p class="instruction">Watch the memories slide by... 🎉</p>
+
+    <div class="slider" id="slider">
+      <img src="1.jpg" class="slide active" alt="Memory 1" />
+      <img src="2.jpg" class="slide" alt="Memory 2" />
+      <img src="11.jpeg" class="slide" alt="Memory 3" />
+      <img src="12.jpeg" class="slide" alt="Memory 4" />
+      <img src="13.jpg" class="slide" alt="Memory 5" />
+      <img src="14.jpg" class="slide" alt="Memory 6" />
+    </div>
+  </main>
+  <script>
+    const slides = document.querySelectorAll('.slide');
+    let current = 0;
+  
+    function showNextSlide() {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+    }
+  
+    setInterval(showNextSlide, 2000);
+  
+    // Confetti animation
+    function createConfetti() {
+      const confetti = document.createElement('div');
+      confetti.classList.add('confetti');
+      confetti.style.left = Math.random() * window.innerWidth + 'px';
+      confetti.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 70%)`;
+      document.body.appendChild(confetti);
+      setTimeout(() => confetti.remove(), 4000);
+    }
+  
+    // Fireworks animation
+    function createFirework() {
+      const firework = document.createElement('div');
+      firework.classList.add('firework');
+      const size = Math.random() * 15 + 10 + 'px';
+      firework.style.width = size;
+      firework.style.height = size;
+      firework.style.left = Math.random() * window.innerWidth + 'px';
+      firework.style.top = Math.random() * window.innerHeight + 'px';
+      firework.style.backgroundColor = `hsl(${Math.random() * 360}, 100%, 50%)`;
+      document.body.appendChild(firework);
+      setTimeout(() => firework.remove(), 1000);
+    }
+  
+    setInterval(createConfetti, 200);
+    setInterval(createFirework, 600);
+  </script>
+  
+</body>
+</html>
